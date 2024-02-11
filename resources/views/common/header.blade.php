@@ -26,9 +26,9 @@
         </li>
         <!-- Nav Item - Messages -->
         <li class="nav-item  no-arrow mx-1">
-            <a class="nav-link text-white" href="/job" id="homelink" role="button"
+            <a class="nav-link text-white" href="/jobs" id="homelink" role="button"
                 data-toggle="" aria-haspopup="true" aria-expanded="false">
-                Job
+                Jobs
             </a>
         </li>
         <!-- Nav Item - Messages -->

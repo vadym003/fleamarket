@@ -50,3 +50,17 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 
+
+
+
+Route::get('/jobs', JobController::class .'@index')->name('jobs.index');
+
+Route::get('/jobs/post', JobController::class .'@post')->name('jobs.post');
+
+Route::post('/jobs', JobController::class .'@store')->name('jobs.store');
+
+Route::get('/jobs/{job_id}/edit', JobController::class .'@edit')->name('jobs.edit');
+
+Route::put('/jobs/{job_id}', JobController::class .'@update')->name('jobs.update');
+
+Route::delete('/jobs/{job_id}', JobController::class .'@destroy')->name('jobs.destroy');
