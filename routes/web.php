@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\User\JobController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -45,22 +46,22 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/updatefleamarket', [App\Http\Controllers\Auth\User\FleamarketController::class, 'updatefleamarket'])->name('fleamarket.update');
         Route::post('/deletefiles', [App\Http\Controllers\Auth\User\FleamarketController::class, 'deletefiles'])->name('fleamarket.delete');
         Route::post('/deleteproduct', [App\Http\Controllers\Auth\User\FleamarketController::class, 'deleteproduct'])->name('fleamarket.productdelete');
+
+
+        Route::get('/jobs', JobController::class .'@index')->name('jobs.index');
+        
+        Route::get('/jobs/post', JobController::class .'@post')->name('jobs.post');
+        
+        Route::post('/jobs', JobController::class .'@store')->name('jobs.store');
+        
+        Route::get('/jobs/{job_id}/edit', JobController::class .'@edit')->name('jobs.edit');
+        
+        Route::put('/jobs/{job_id}', JobController::class .'@update')->name('jobs.update');
+        
+        Route::delete('/jobs/{job_id}', JobController::class .'@destroy')->name('jobs.destroy');
     
 });
 
 
 
 
-
-
-Route::get('/jobs', JobController::class .'@index')->name('jobs.index');
-
-Route::get('/jobs/post', JobController::class .'@post')->name('jobs.post');
-
-Route::post('/jobs', JobController::class .'@store')->name('jobs.store');
-
-Route::get('/jobs/{job_id}/edit', JobController::class .'@edit')->name('jobs.edit');
-
-Route::put('/jobs/{job_id}', JobController::class .'@update')->name('jobs.update');
-
-Route::delete('/jobs/{job_id}', JobController::class .'@destroy')->name('jobs.destroy');
