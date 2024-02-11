@@ -1,53 +1,69 @@
 .more-button {
-    cursor: pointer;
-  }
-  
-  .job-board {
-    padding: 1.25rem;
-    cursor: pointer;
-    border-bottom: 1px solid var(--bs-gray-200);
-  }
-  
-  .job-board:hover {
-    background-color: #f8f9fc;
-  }
-  
-  .job-description {
-    max-height: 3.5em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .created-time {
-    color: var(--bs-gray-800);
-  }
-  
-  .status {
-    font-size: 14px;
-    border-radius: 20px;
-  }
-  
-  .open-status {
-    background-color: #d0f8de;
-    color: #023815;
-  }
-  
-  .complete-status {
-    background-color: #ffdaed;
-    color: #860146;
-  }
-  
-  .progress-status {
-    background-color: #f7ea92;
-    color: #955318;
-  }
-  
-  .participants-num {
-    color: #12151b;
-  }
-  
-  .deleteForm {
-    position: absolute;
-    bottom: var(--bs-card-spacer-y);
-    right: var(--bs-card-spacer-x);
-  }
+  cursor: pointer;
+}
+
+.job-board {
+  padding: 1.25rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.job-board:hover {
+  background-color: #f8f9fc;
+}
+
+.job-description {
+  max-height: 3.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.created-time {
+  color: var(--bs-gray-800);
+}
+
+.status {
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.open-status {
+  background-color: #d0f8de;
+  color: #023815;
+}
+
+.complete-status {
+  background-color: #ffdaed;
+  color: #860146;
+}
+
+.progress-status {
+  background-color: #f7ea92;
+  color: #955318;
+}
+
+.participants-num {
+  color: #12151b;
+}
+
+.deleteForm {
+  position: absolute;
+  bottom: var(--bs-card-spacer-y);
+  right: var(--bs-card-spacer-x);
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
