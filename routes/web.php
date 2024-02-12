@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\User\JobController;
+use App\Http\Controllers\Admin\JobAllowController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::post('/addcategory', [App\Http\Controllers\Admin\CategoryController::class, 'addCategory'])->name('adminCategory.add');
         Route::get('/tag', [App\Http\Controllers\Admin\TagController::class, 'index'])->name('adminTag');
         Route::post('/addtag', [App\Http\Controllers\Admin\TagController::class, 'addTag'])->name('adminTag.add');
-
+        
+        Route::get('/jobs', [App\Http\Controllers\Admin\JobAllowController::class, 'index'])->name('adminJobs');
+        Route::post('/jobs/{job_id}', [App\Http\Controllers\Admin\JobAllowController::class, 'allowJob'])->name('adminJobs.allow');
     });
 
 });

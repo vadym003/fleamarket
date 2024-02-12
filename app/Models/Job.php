@@ -20,7 +20,8 @@ class Job extends Model
         'price',
         'participants_num',
         'status',
-        'isDeleted'
+        'isDeleted',
+        'isAllowed'
     ];
     
     public function user()

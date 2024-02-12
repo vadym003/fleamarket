@@ -5,7 +5,8 @@
 .job-board {
   padding: 1.25rem;
   cursor: pointer;
-  border-bottom: 1px solid var(--bs-gray-200);
+  border-bottom: 1px solid #e9ecef;
+  color: #12151b;
 }
 
 .job-board:hover {
@@ -19,7 +20,7 @@
 }
 
 .created-time {
-  color: var(--bs-gray-800);
+  color: #343a40;
 }
 
 .status {
@@ -42,14 +43,10 @@
   color: #955318;
 }
 
-.participants-num {
-  color: #12151b;
-}
-
 .deleteForm {
   position: absolute;
-  bottom: var(--bs-card-spacer-y);
-  right: var(--bs-card-spacer-x);
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .gap-1 {
@@ -61,9 +58,15 @@
 }
 
 .gap-3 {
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .gap-4 {
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

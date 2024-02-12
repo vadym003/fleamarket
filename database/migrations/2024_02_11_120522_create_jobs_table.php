@@ -24,6 +24,7 @@ class CreateJobsTable extends Migration
             $table->integer('participants_num');
             $table->string('status');
             $table->integer('isDeleted');
+            $table->integer('isAllowed');
             $table->timestamps();
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // $table->foreign('category_id')->references('catid')->on('categories')->onDelete('cascade');

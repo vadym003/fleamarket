@@ -12,18 +12,16 @@ use Illuminate\Support\Facades\DB;
 
 class JobController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $jobs = DB::table('jobs')
             ->join('users', 'users.id','=','jobs.user_id')
             // ->join('categories', 'categories.catid','=','jobs.category_id')
             ->where('jobs.isDeleted', '=', 0)
+            ->where('jobs.isAllowed', '=', 1)
             ->orderby('jobs.created_at', 'desc')
             ->select('jobs.id', 'jobs.title', 'jobs.description', 'jobs.deadline', 'jobs.status', 'jobs.price', 'jobs.participants_num', 'jobs.created_at', 'users.name')
-            ->get();
+            ->paginate(20);
         return view('user.jobs', compact('jobs'));
     }
 
@@ -64,7 +62,8 @@ class JobController extends Controller
             'participants_num' => $request->participants_num,
             'deadline' => $request->deadline,
             'status' => 'Open',
-            'isDeleted' => 0
+            'isDeleted' => 0,
+            'isAllowed' => 0
         ]);
         return redirect()->route('jobs.index')
         ->with('success','Job created successfully.');
@@ -110,7 +109,8 @@ class JobController extends Controller
             'participants_num' => $request->participants_num,
             'deadline' => $request->deadline,
             'status' => 'Open',
-            'isDeleted' => 0
+            'isDeleted' => 0,
+            'isAllowed' => 0
         ]);
 
         return redirect()->route('jobs.index')
@@ -120,7 +120,9 @@ class JobController extends Controller
     public function destroy(string $id)
     {
         $job = Job::find($id);
-        $job->delete();
+        // $job->delete();
+        $job->isDeleted = 1;
+        $job->save();
 
         return redirect()->route('jobs.index')
             ->with('success', 'Job deleted successfully');
