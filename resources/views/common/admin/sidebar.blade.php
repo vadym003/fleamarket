@@ -10,7 +10,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <li class="nav-item">
-        <a class="nav-link" href="dashboard">
+        <a class="nav-link" href="index">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -20,25 +20,18 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item ">
         <a class="nav-link" href="category">
-            <i class="fa fa-list"></i>
+            <i class="fa fa-cube"></i>
             <span><?php echo __('Category');?></span></a>
-    </li>
-
-    <li class="nav-item ">
-        <a class="nav-link" href="goods">
-            <i class="fa fa-list"></i>
-            <span><?php echo __('Product');?></span></a>
-    </li>
-
-    <li class="nav-item ">
-        <a class="nav-link" href="jobs">
-            <i class="fa fa-list"></i>
-            <span><?php echo __('Job');?></span></a>
     </li>
     <li class="nav-item ">
         <a class="nav-link" href="tag">
-            <i class="fa fa-list"></i>
+            <i class="fa fa-tags"></i>
             <span><?php echo __('Tag');?></span></a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="users">
+            <i class="fa fa-tags"></i>
+            <span><?php echo __('User List');?></span></a>
     </li>
 
     <!-- Divider -->
@@ -46,20 +39,20 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Interface
+        Shopping
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
+            <i class="fa fa-shopping-bag"></i>
+            <span><?php echo __('Fleamarket');?></span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
+                <a class="collapse-item" href="goods">List</a>
                 <a class="collapse-item" href="cards.html">Cards</a>
             </div>
         </div>
@@ -69,8 +62,8 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
+            <i class="fa fa-shopping-cart"></i>
+            <span>Shop</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
@@ -89,15 +82,15 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Addons
+        Job
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <i class="fa fa-tasks"></i>
+            <span>Jobs</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -114,18 +107,18 @@
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
-    </li>
+    </li> -->
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
@@ -136,10 +129,10 @@
     </div>
 
     <!-- Sidebar Message -->
-    <div class="sidebar-card d-none d-lg-flex">
+    <!-- <div class="sidebar-card d-none d-lg-flex">
         <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
         <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-    </div>
+    </div> -->
 
 </ul>

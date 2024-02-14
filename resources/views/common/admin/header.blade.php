@@ -130,7 +130,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_3.svg')}}"
                             alt="...">
                         <div class="status-indicator bg-success"></div>
                     </div>
@@ -145,19 +145,22 @@
         </li>
 
         <div class="topbar-divider d-none d-sm-block"></div>
-
         <!-- Nav Item - User Information -->
+        
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                <img class="img-profile rounded-circle"
-                    src="{{asset('admin/img/undraw_profile.svg')}}">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
+                <?php if(auth()->user()->image == ""){ ?>
+                <img src="{{asset('admin/img/undraw_profile.svg')}}" class="img-profile rounded-circle" alt="User-Profile-Image"> 
+                <?php }else{ ?>
+                <img src="/profile/{{ auth()->user()->image}}" class="img-profile rounded-circle" alt="User-Profile-Image"> 
+                <?php } ?>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="overview">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>

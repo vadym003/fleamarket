@@ -21,7 +21,7 @@
         <li class="nav-item  no-arrow mx-1">
             <a class="nav-link text-white" href="/fleamarket" id="homelink" role="button"
                 data-toggle="" aria-haspopup="true" aria-expanded="false">
-                FreeMarket
+                FleaMarket
             </a>
         </li>
         <!-- Nav Item - Messages -->
@@ -49,17 +49,21 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <!-- Nav Item - User Information -->
+        @auth
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle text-white" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline small text-white">Douglas McGee</span>
-                <img class="img-profile rounded-circle"
-                    src="{{asset('admin/img/undraw_profile.svg')}}">
+                <span class="mr-2 d-none d-lg-inline small text-white">{{auth()->user()->name}}</span>
+                <?php if(auth()->user()->image == ""){ ?>
+                <img src="{{asset('admin/img/undraw_profile.svg')}}" class="img-profile rounded-circle" alt="User-Profile-Image"> 
+                <?php }else{ ?>
+                <img src="/profile/{{ auth()->user()->image}}" class="img-profile rounded-circle" alt="User-Profile-Image"> 
+                <?php } ?>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="overview">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
@@ -78,7 +82,15 @@
                 </a>
             </div>
         </li>
-
+        @endauth
+        @guest
+        <li class="nav-item  no-arrow mx-1">
+            <a class="nav-link text-white" href="/login" id="homelink" role="button"
+                data-toggle="" aria-haspopup="true" aria-expanded="false">
+                Log in
+            </a>
+        </li>
+        @endguest
     </ul>
 
 </nav>

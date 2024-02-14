@@ -49,7 +49,7 @@
                         <div class="col mr-3">
                             <div class="row">
                                 <div class="col-xl-3, col-lg-3 col-md-3">{{ $proitem->product_name}}</div>
-                                <div class="col-xl-3, col-lg-3 col-md-3">seller: {{ $proitem->user_id}}</div>
+                                <div class="col-xl-3, col-lg-3 col-md-3">seller: {{ $proitem->name}}</div>
                                 <div class="col-xl-3, col-lg-3 col-md-3">Price: {{ $proitem->price}}</div>
                                 <div class="col-xl-3, col-lg-3 col-md-3">sold: 2</div>
                             </div>

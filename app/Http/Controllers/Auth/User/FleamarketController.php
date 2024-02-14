@@ -30,9 +30,24 @@ class FleamarketController extends Controller
             // $products = Product::whereIn('id', function($query) use ($seltag){
             //     $query->select(['product_id'])->from('producttags')->where('tag_id',$seltag);
             // })->paginate(5);
-            $products = Product::where('cat_id', $seltag)->where('type',$type)->paginate(5);
+            //$products = Product::where('cat_id', $seltag)->where('type',$type)->paginate(5);
+            $products = DB::table('products')
+                    ->select('products.*', 'users.name')
+                    ->join('users', 'products.user_id','=','users.id')
+                    ->where('products.type',$type)
+                    ->where('deleted',0)
+                    ->where('cat_id',$seltag)
+                    //->where('products.allowed_flg',1)
+                    ->orderby('products.updated_at', 'desc')->paginate(20);
         }else{
-            $products = DB::table('products')->where('type',$type)->paginate(5);
+            //$products = DB::table('products')->where('type',$type)->paginate(5);
+            $products = DB::table('products')
+                    ->select('products.*', 'users.name')
+                    ->join('users', 'products.user_id','=','users.id')
+                    ->where('products.type',$type)
+                    ->where('deleted',0)
+                    //->where('products.allowed_flg',1)
+                    ->orderby('products.updated_at', 'desc')->paginate(20);
         }
 
         if(!empty($products)){
@@ -254,7 +269,8 @@ class FleamarketController extends Controller
         $taglist = Tag::all();
         $data['tag'] = $taglist;
       
-        Session::set('status', 'Success Added data.');
+        $request->session()->flash('status', 'Success Added data.');
+        
         return view('user.addfleamarket', $data);
         //return redirect('fleamarket')->with('status', 'New Product Form Data Has Been inserted');
     }

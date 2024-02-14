@@ -42,5 +42,5 @@
                 </li>
             @endif
         </ul>
-    </nav>
+    </nav> {{ "Results: " . $paginator->total(). ",   Page " . $paginator->currentPage() . "  of  " . $paginator->lastPage() }}
 @endif
